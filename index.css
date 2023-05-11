@@ -1,0 +1,10 @@
+#random_background_color_button{
+    position: absolute;
+    width: 10em;
+    height: 5em;
+    left: 50%;
+    margin-left: -5em;
+    right: 50%;
+    top: 50%;
+    margin-top: -2.5em;
+}
