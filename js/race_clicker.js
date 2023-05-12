@@ -1,10 +1,22 @@
+/** @type {HTMLElement} */ 
 var button;
+
+/** @type {HTMLElement} */
 var buttonContent;
+
+/** @type {HTMLElement} */
 var progressBar;
+
+/** @type {CSSStyleDeclaration} */
+var defaultButtonStyle;
 
 var width = 0;
 var isRacing = false;
 var id;
+
+var speed = 1.5;
+
+var score = 0;
 
 function startRace() {
     if(!isRacing) {
@@ -15,26 +27,53 @@ function startRace() {
         progressBar = document.getElementById("bar");
 
         // Save default button's css, to reset it when race ends.
-        var default_button_style = button.style;
+        defaultButtonStyle = button.style;
 
         id = setInterval(barProgression, 10);
 
-        button.onclick = "update()"
+        buttonContent.innerHTML = score;
+
+        repositionButton();
+
+        button.setAttribute("onclick", "update()");
     }
 }
 
 function update() {
     if(isRacing) {
-        progressBar.style.width = "0%";
+        resetBar();
+        score++;
+        buttonContent.innerHTML = score;
+        repositionButton();
     }
+}
+
+function repositionButton() {
+    var newPosition = randomPosition();
+    button.style.top = newPosition[0] + "%";
+    button.style.left = newPosition[1] + "%";
 }
 
 function barProgression() {
     if(width >= 100) {
-        clearInterval(id);
-        isRacing = false;
+        resetButton();
     } else {
-        width++;
+        width += speed;
         progressBar.style.width = width + "%";
     }
+}
+
+function resetBar() {
+    width = 0;
+    progressBar.style.width = "0%";
+}
+
+function resetButton() {
+    resetBar();
+    clearInterval(id);
+    isRacing = false;
+    button.style = defaultButtonStyle;
+    buttonContent.innerHTML = "Race Clicker";
+    score = 0;
+    button.setAttribute("onclick", "startRace()");
 }

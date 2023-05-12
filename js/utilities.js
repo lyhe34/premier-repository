@@ -25,5 +25,5 @@ function randomRoundNumber(min, max) {
  * @param {HTMLElement} element
  */
 function randomPosition(element) {
-
+    return [randomRoundNumber(20, 80), randomNumber(20, 80)];
 }
