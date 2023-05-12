@@ -6,14 +6,37 @@
     margin-left: -5em;
     right: 50%;
     top: 50%;
-    margin-top: -5em;
+    margin-top: -9em;
+    border-style: none;
+}
+#random_background_color_button:hover {
+    background-color: grey;
 }
 
 #race_clicker_button {
     position: absolute;
-    width: 10em;
-    height: 5em;
     left: 50%;
     margin-left: -5em;
+    right: 50%;
     top: 50%;
+    margin-top: -1em;
+    width: 10em;
+    height: 5em;
+    border-style:none;
+    padding: 0;
+}
+
+#race_clicker_button:hover {
+    background-color: grey;
+}
+
+#rc_button_content {
+    position: relative;
+    top: -60%;
+}
+
+#bar {
+    width: 0%;
+    height: 100%;
+    background-color: blue;
 }
