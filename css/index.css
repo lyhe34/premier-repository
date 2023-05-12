@@ -1,4 +1,4 @@
-#random_background_color_button{
+#random_background_color_button {
     position: absolute;
     width: 10em;
     height: 5em;
@@ -6,5 +6,14 @@
     margin-left: -5em;
     right: 50%;
     top: 50%;
-    margin-top: -2.5em;
+    margin-top: -5em;
+}
+
+#race_clicker_button {
+    position: absolute;
+    width: 10em;
+    height: 5em;
+    left: 50%;
+    margin-left: -5em;
+    top: 50%;
 }
